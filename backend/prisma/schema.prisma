@@ -53,6 +53,7 @@ model Subject {
   updatedAt   DateTime      @updatedAt
   topics      Topic[]
   attempts    QuizAttempt[]
+  progress    UserProgress[]
 
   @@map("subjects")
 }

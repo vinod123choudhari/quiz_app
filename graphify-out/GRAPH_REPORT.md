@@ -1,16 +1,16 @@
 # Graph Report - final_year_project  (2026-05-12)
 
 ## Corpus Check
-- 87 files · ~35,939 words
+- 88 files · ~36,745 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 530 nodes · 883 edges · 43 communities (39 shown, 4 thin omitted)
+- 530 nodes · 883 edges · 43 communities (40 shown, 3 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `ad3b300e`
+- Built from commit: `d79882c5`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -38,9 +38,9 @@
 - [[_COMMUNITY_Community 20|Community 20]]
 - [[_COMMUNITY_Community 21|Community 21]]
 - [[_COMMUNITY_Community 22|Community 22]]
-- [[_COMMUNITY_Community 26|Community 26]]
-- [[_COMMUNITY_Community 30|Community 30]]
-- [[_COMMUNITY_Community 36|Community 36]]
+- [[_COMMUNITY_Community 23|Community 23]]
+- [[_COMMUNITY_Community 27|Community 27]]
+- [[_COMMUNITY_Community 31|Community 31]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `cn()` - 223 edges
@@ -66,7 +66,7 @@
 - `AlertDialogTitle()` --calls--> `cn()`  [EXTRACTED]
   frontend/src/app/components/ui/alert-dialog.tsx → frontend/src/app/components/ui/utils.ts
 
-## Communities (43 total, 4 thin omitted)
+## Communities (43 total, 3 thin omitted)
 
 ### Community 0 - "Community 0"
 Cohesion: 0.06
@@ -82,7 +82,7 @@ Nodes (42): code:block1 (Production:), code:block2 (backend/), code:prisma (gene
 
 ### Community 3 - "Community 3"
 Cohesion: 0.07
-Nodes (34): Separator(), Sidebar(), SidebarContent(), SidebarContext, SidebarContextProps, SidebarFooter(), SidebarGroup(), SidebarGroupAction() (+26 more)
+Nodes (29): Input(), Separator(), SidebarContent(), SidebarContext, SidebarContextProps, SidebarFooter(), SidebarGroup(), SidebarGroupAction() (+21 more)
 
 ### Community 4 - "Community 4"
 Cohesion: 0.13
@@ -156,15 +156,19 @@ Nodes (6): BreadcrumbEllipsis(), BreadcrumbItem(), BreadcrumbLink(), BreadcrumbL
 Cohesion: 0.33
 Nodes (5): Button, Design system guidelines, General guidelines, Usage, Variants
 
+### Community 23 - "Community 23"
+Cohesion: 0.33
+Nodes (6): Sidebar(), SidebarMenuButton(), sidebarMenuButtonVariants, SidebarRail(), SidebarTrigger(), useSidebar()
+
 ## Knowledge Gaps
 - **94 isolated node(s):** `fs`, `path`, `net`, `path`, `express` (+89 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **4 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **3 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `cn()` connect `Community 4` to `Community 0`, `Community 1`, `Community 3`, `Community 36`, `Community 5`, `Community 9`, `Community 10`, `Community 11`, `Community 13`, `Community 14`, `Community 15`, `Community 16`, `Community 17`, `Community 18`, `Community 19`, `Community 21`?**
+- **Why does `cn()` connect `Community 4` to `Community 0`, `Community 1`, `Community 3`, `Community 5`, `Community 9`, `Community 10`, `Community 11`, `Community 13`, `Community 14`, `Community 15`, `Community 16`, `Community 17`, `Community 18`, `Community 19`, `Community 21`, `Community 23`?**
   _High betweenness centrality (0.354) - this node is a cross-community bridge._
 - **Why does `Proposed Changes` connect `Community 2` to `Community 12`?**
   _High betweenness centrality (0.009) - this node is a cross-community bridge._
